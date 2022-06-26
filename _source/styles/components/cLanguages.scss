@@ -1,0 +1,23 @@
+.c-languages {
+  cursor: pointer;
+  .c-smartMenu>ul>li>a.js-smartMenu__toggle {
+    font-size: 12px;
+    height: 23px;
+    line-height: 23px;
+    padding-right: 0;
+    border-bottom: 1px solid $gray;
+    &:before,
+    &:after {
+      display: none !important;
+    }
+  }
+  .c-smartMenu>ul>li>ul {
+    width: 50px;
+    a {
+      text-align: center;
+    }
+  }
+  &__active {
+
+  }
+}

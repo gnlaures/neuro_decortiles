@@ -1,0 +1,303 @@
+.s-product {
+	&__header {
+		padding: 40px 0;
+		h1 {
+			@include titles($arrow: true, $fs: 20px);
+			&:before {
+				top: -7px;
+			}
+		}
+	}
+
+	&__content {
+		@include calcWidthForPositionNegative(-20px);
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin-bottom: 60px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	&__col {
+		padding: 0 20px;
+	}
+
+	&__gallery {
+		@include flexWidth(100%);
+		display: block;
+		overflow: hidden;
+		//width: 749px;
+	}
+	&__extraMedia {
+		display: flex;
+		padding-top: 16px;
+		padding-bottom: 10px;
+	}
+	&__gallerySmall {
+		@include flexWidth(50%);
+		overflow: hidden;
+		padding-right: 8px;
+	}
+	&__video {
+		@include flexWidth(50%);
+		padding-left: 8px;
+	}
+	&__ctas {
+		display: block;
+		width: 100%;
+		padding-top: 2px;
+		ul {
+			@include calcWidthForPositionNegative(-5px);
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			li {
+				padding: 5px;
+			}
+		}
+		.c-btn {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			height: auto;
+			padding: 8px 12px;
+			line-height: 13px;
+			font-size: 14px;
+			font-weight: $fwMedium;
+			text-transform: uppercase;
+			white-space: nowrap;
+			letter-spacing: 0.94px;
+		}
+	}
+
+	&__category {
+		a {
+			@include titles($fs: 14px);
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+	&__title {
+		padding: 25px 0;
+		h2 {
+			@include titles($fs: 26px, $fw: $fwBold, $tc: $black);
+			line-height: 1.1;
+		}
+		h3 {
+			@include titles($fs: 26px, $tc: $black);
+			line-height: 1.1;
+		}
+	}
+	&__about {
+		p {
+			@include paragraphs();
+		}
+	}
+	&__listTopics {
+		margin: 32px 0;
+		padding: 28px 0;
+		border-top: 1px solid $gray;
+		border-bottom: 1px solid $gray;
+		ul {
+			@include calcWidthForPositionNegative(-8px);
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			> li {
+				@include flexWidth(50%);
+				padding: 8px;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+				&:nth-of-type(even) {
+					* {
+						text-align: right;
+					}
+				}
+			}
+			h4, p {
+				@include paragraphs($fs: 16px, $tc: #a1a1a1);
+				letter-spacing: 0.75px;
+			}
+			h4 {
+				font-weight: $fwSemiBold;
+			}
+		}
+	}
+	&__default {
+		display: block;
+		width: 100%;
+		margin-bottom: 60px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		h5 {
+			@include titles($arrow: true, $fs: 18px);
+			letter-spacing: 2.5px;
+			margin-bottom: 10px;
+			padding-left: 12px;
+			&:before {
+				top: -1px;
+				font-size: 18px;
+			}
+		}
+		p {
+			@include paragraphs();
+		}
+
+		&__listBlocks {
+			@include calcWidthForPositionNegative(-5px);
+			display: flex;
+			flex-wrap: wrap;
+			> li {
+				@include flexWidth(12.5%);
+				padding: 5px;
+			}
+		}
+		&__local {
+			display: block;
+			width: 100%;
+			margin-bottom: 20px;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+			ul {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+				> li {
+					@include transition();
+					@include opacity(0.75);
+					margin-right: 10px;
+					&:hover {
+						@include opacity(1);
+					}
+					&:last-of-type {
+						margin-right: 0;
+					}
+					* {
+						max-width: 84px;
+						object-fit: cover;
+					}
+				}
+			}
+		}
+		&__listScale {
+			@include calcWidthForPositionNegative(-8px);
+			display: flex;
+			flex-direction: row;
+			align-items: flex-end;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			> li {
+				@include flexWidth(65px);
+				padding: 8px;
+				min-width: 55px;
+				* {
+					display: block;
+					width: 100%;
+				}
+				figcaption {
+					@include paragraphs();
+					letter-spacing: 0.5px;
+					font-size: 13px;
+					text-align: center;
+					text-transform: uppercase;
+				}
+				
+				&:nth-of-type(1) {@include flexWidth(140px);}
+				&:nth-of-type(2) {@include flexWidth(120px);}
+				&:nth-of-type(3) {@include flexWidth(100px);}
+				&:nth-of-type(4) {@include flexWidth(90px);}
+				&:nth-of-type(5) {@include flexWidth(80px);}
+				&:nth-of-type(6) {@include flexWidth(70px);}
+			}
+		}
+		&__suggestions {
+			@include calcWidthForPositionNegative(-10px);
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			li {
+				padding: 0 10px;
+			}
+		}
+		&__tech {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin-bottom: 0;
+			h5 {
+				margin-bottom: 0;
+			}
+			.c-btn {
+				@include flexWidth(85px);
+				font-size: 10px;
+				padding: 0 10px;
+				height: 30px;
+				line-height: 28px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.s-product {
+		.u-container {
+			max-width: 840px;
+		}
+		&__content {
+			flex-wrap: wrap;
+		}
+		&__col {
+			@include flexWidth(100%);
+			&:first-of-type {
+				margin-bottom: 50px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 580px) {
+	.s-product__default__tech {
+		img {
+			margin: 10px;
+		}
+	}
+}
+@media screen and (max-width: 510px) {
+	.s-product {
+		&__default__listBlocks {
+			@include scroll($bg: $gray, $bar: $black2, $size: 4px);
+			overflow-x: scroll;
+			flex-wrap: nowrap;
+			> li {
+				@include flexWidth(22%);
+			}
+		}
+		&__default__listScale {
+			@include scroll($bg: $gray, $bar: $black2, $size: 4px);
+			overflow-x: auto;
+			flex-wrap: nowrap;
+		}
+		&__default__suggestions {
+			@include scroll($bg: $gray, $bar: $black2, $size: 4px);
+			@include calcWidthForPositionNegative(-10px);
+			overflow-x: scroll;
+			> li {
+				@include flexWidth(45%);
+				padding: 10px;
+			}
+		}
+	}
+}

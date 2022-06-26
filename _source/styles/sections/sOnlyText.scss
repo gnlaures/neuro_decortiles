@@ -1,0 +1,12 @@
+.s-onlyText {
+    padding: 80px 0;
+    .u-container {
+        max-width: 940px;
+        > * {
+            margin-bottom: 10px;
+        }
+    }
+    .c-plainText {
+        padding: 0;
+    }
+}

@@ -1,0 +1,133 @@
+.m-webApp {
+	&__hero {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	&__side {
+		@include calc(width, 50%, '-', 208px);
+		align-self: center;
+		padding-right: 20px;
+		h2, p {
+			color: $white;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			* {
+				color: $white;
+				text-transform: uppercase;
+				letter-spacing: 3px;
+			}
+		}
+		h2 {
+			font-weight: $fwExtraBold;
+			font-size: 34px;
+			margin-bottom: 5px;
+		}
+		p {
+			font-weight: $fwExtraLight;
+			font-size: 18px;
+			line-height: 1.8;
+			max-width: 200px;
+		}
+		.u-iconWithCaption {
+			margin-top: 50px;
+		}
+	}
+	&__frame {
+		@include flexWidth(415px);
+		display: block;
+		height: 740px;
+		position: relative;
+		iframe {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	&__close {
+		@include calc(width, 50%, '-', 208px);
+		padding-left: 20px;
+		.u-iconWithCaption {
+			cursor: pointer;
+			svg {
+				path {
+					fill: $white;
+				}
+			}
+			span {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.m-webApp {
+		&__hero {
+			position: relative;
+			padding-top: 50px;
+			width: 100%;
+			max-width: 670px;
+			margin: 0 auto;
+		}
+		&__close {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		&__side {
+			flex: 1 1 auto;
+		}
+	}
+}
+@media screen and (max-width: 720px) {
+	.m-webApp {
+		&__hero {
+			padding-top: 0;
+			flex-wrap: wrap;
+			max-width: 415px;
+		}
+		&__frame {
+			order: 3;
+		}
+		&__close {
+			@include flexWidth(120px);
+			padding-left: 0;
+		}
+		&__side {
+			@include flexWidth(100%);
+			order: 2;
+			margin-bottom: 40px;
+			padding-right: 125px;
+			.u-iconWithCaption {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 500px) {
+	.m-webApp__frame {
+		display: none;
+	}
+	.m-webApp__frameButton {
+		@include flexWidth(100%);
+		order: 4;
+		display: block !important;
+		padding-top: 15px;
+		.c-btn {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+	.m-webApp {
+		.m-modal__content {
+			display: flex;
+			align-items: center;
+			max-height: 400px;
+		}
+	}
+}

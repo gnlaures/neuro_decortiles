@@ -1,0 +1,13 @@
+.m-simple {
+	.m-modal__content {
+		max-width: 780px;
+	}
+	.m-modal__hero {
+		background: $white;
+		padding: 30px;
+		h1 {
+			@include titles($arrow: true);
+			margin-bottom: 20px;
+		}
+	}
+}

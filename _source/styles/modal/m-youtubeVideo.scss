@@ -1,0 +1,6 @@
+.m-youtubeVideo {
+	z-index: $defaulModalZindex + 1;
+	.m-modal__content {
+		max-width: 780px;
+	}
+}

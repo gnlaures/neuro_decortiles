@@ -1,0 +1,26 @@
+@media screen and (max-width: 820px) {
+  .c-searchProduct {
+    .c-form {
+      .c-form__fieldsHero > .c-form__field.u-fw30,
+      .c-form__fieldsHero > .c-form__field.u-fw10 {
+        @include flexWidth(50%);
+      }
+      .c-btn {
+        max-width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 520px) {
+  .c-searchProduct {
+    .c-form {
+      .c-form__fieldsHero > .c-form__field.u-fw30,
+      .c-form__fieldsHero > .c-form__field.u-fw10 {
+        @include flexWidth(100%);
+      }
+      .c-btn {
+        max-width: 150px;
+      }
+    }
+  }
+}

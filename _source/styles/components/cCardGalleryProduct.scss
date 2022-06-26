@@ -1,0 +1,33 @@
+.c-cardGalleryProduct {
+  @include transition();
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid $gray;
+  figure {
+    background: $black;
+    img {
+      @include transition();
+      @include opacity(1);
+      @include scale(1, center);
+    }
+  }
+  h3 {
+    @include transition();
+    @include paragraphs();
+    text-transform: uppercase;
+    padding: 12px 10px 12px 0px;
+  }
+  &:hover {
+    border-bottom: 1px solid $black;
+    figure {
+      img {
+        @include opacity(0.9);
+        @include scale(1.1, center);
+      }
+    }
+    h3 {
+      color: $black;
+      padding: 12px 5px 12px 5px;
+    }
+  }
+}

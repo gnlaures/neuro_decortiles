@@ -1,0 +1,35 @@
+.c-comments {
+	&__create {
+		margin-bottom: 40px;
+	}
+	&__list {
+		> ul > li {
+			margin-bottom: 15px;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		&__card {
+			display: block;
+			padding: 20px;
+			border: 1px solid $white3;
+			&:hover {
+				border-color: $gray;
+			}
+			h3 {
+				@include titles($fs: 20px);
+			}
+			.date {
+				display: block;
+				width: 100%;
+				font-size: 14px;
+				color: $black;
+				font-weight: $fwBold;
+				margin: 10px 0;
+			}
+			p {
+				@include paragraphs();
+			}
+		}
+	}
+}

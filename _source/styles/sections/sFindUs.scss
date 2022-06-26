@@ -1,0 +1,260 @@
+@mixin sFindUsHeight() {
+	@include calc(height, 100vh, '-', 115px);
+}
+
+.s-findUs {
+	@include sFindUsHeight();
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative;
+
+	&__aside {
+		@include transition();
+		@include flexWidth(330px);
+		@include scroll($bg: $white2, $bar: $black2, $size: 8px);
+		@include sFindUsHeight();
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		overflow: auto;
+		padding: 35px 30px 25px 30px;
+		position: relative;
+		background: $white;
+		&__row {
+			h1 {
+				@include titles($arrow: true, $tc: $black);
+				padding-left: 0;
+				max-width: 220px;
+				margin-bottom: 30px;
+				&:before {
+					left: -20px;
+				}
+			}
+			p {
+				@include paragraphs();
+			}
+		}
+
+		&__filter {
+			margin-top: 30px;
+			> li {
+				margin-bottom: 5px;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+		&__feedback {
+			padding: 30px 0;
+			p {
+				@include paragraphs();
+				margin-bottom: 10px;
+				&:first-of-type {
+					color: $black;
+					strong {
+						color: $black;
+					}
+				}
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+		&__results {
+			padding-bottom: 15px;
+			> li {
+				margin-bottom: 15px;
+				padding-bottom: 15px;
+				border-bottom: 1px solid $gray;
+				&:last-of-type {
+					margin-bottom: 0;
+					padding-bottom: 0;
+					border-bottom: 0;
+				}
+			}
+		}
+
+		&__footerBtns {
+			padding: 25px 0;
+			li {
+				margin-bottom: 8px;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+			.c-btn {
+				line-height: 40px;
+				text-align: left;
+				background: #e7e7e7;
+				&.is-active {
+					background: $black;
+					color: $white;
+					position: relative;
+					&:after {
+						@include bg(icons, 'icon_x.svg');
+						content: '';
+						display: block;
+						width: 30px;
+						height: 30px;
+						position: absolute;
+						top: 50%;
+						right: 4px;
+						margin-top: -15px;
+					}
+				}
+			}
+		}
+		&__mobileControl {
+			@include transition();
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			height: 32px;
+			width: 22px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: $black;
+			cursor: pointer;
+			svg {
+				@include transition();
+				@include rotate(0deg, center);
+				display: block;
+				width: 10px;
+				height: 10px;
+			}
+		}
+	}
+	&__content {
+		flex: 1 1 auto;
+		position: relative;
+		* {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&__map {
+			z-index: 2;
+			@include pb(100%);
+			@include transition();
+			&:hover {
+				@include pb(20%);
+			}
+		}
+		&__gallery {
+			z-index: 1;
+			&.is-active {
+				z-index: 3;
+			}
+		}
+	}
+
+	.c-form {
+		li {
+			margin-bottom: 20px;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		label {
+			@include paragraphs($fs: 14px);
+			letter-spacing: 0.5px;
+		}
+	}
+	.c-form.--findUsFormByCity {
+		> ul {
+			position: relative;
+			> li {
+				margin-bottom: 0;
+				input {
+					padding-right: 50px;
+				}
+				&.--btn {
+					@include flexWidth(40px);
+					height: 40px;
+					position: absolute;
+					top: 0;
+					right: 0;
+					button {
+						@include transition();
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: center;
+						width: 100%;
+						height: 40px;
+						background: transparent;
+						cursor: pointer;
+						&:hover {
+							background: $gray;
+						}
+						svg {
+							display: block;
+							width: 18px;
+							height: 18px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.c-toggleList.is-active {
+		.c-toggleList__content {
+			padding-bottom: 40px;
+		}
+	}
+}
+
+@media screen and (max-width: 920px) {
+	.s-findUs {
+		&__aside {
+			@include flexWidth(245px);
+			padding: 25px;
+			&__row {
+				h1 {
+					font-size: 24px;
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 740px) {
+	.s-findUs {
+		&__aside {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 5;
+			&__row {
+				h1 {
+					margin-bottom: 20px;
+				}
+			}
+			&__filter {
+				margin-top: 15px;
+			}
+			&__mobileControl {
+				display: flex !important;
+			}
+		}
+		&__map {
+			z-index: 1;
+		}
+		&.is-mobile-active {
+			.s-findUs__aside {
+				left: -225px;
+			}
+			.s-findUs__aside__mobileControl svg {
+				@include rotate(180deg, center);
+			}
+		}
+	}
+}

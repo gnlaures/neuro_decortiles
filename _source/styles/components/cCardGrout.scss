@@ -1,0 +1,45 @@
+.c-cardGrout {
+	&__title,
+	&__resume {
+		display: block;
+		width: 100%;
+		text-transform: uppercase;
+		font-size: 13px;
+		color: $black;
+		font-weight: $fwBold;
+	}
+	&__resume {
+		color: $text;
+		font-weight: $fwRegular;
+		padding-bottom: 4px;
+	}
+	&__cover {
+		@extend .u-aspectRatio;
+		@extend .--ratio-1-1;
+	}
+	&__more {
+		padding: 10px 0;
+		.c-btn {
+			text-transform: uppercase;
+			font-weight: $fwSemiBold;
+			padding: 0;
+			line-height: 28px;
+			font-size: 12px;
+			max-width: 80px;
+			letter-spacing: 0.5px;
+			margin: 0 auto;
+		}
+	}
+	&__colors {
+		display: block;
+		width: 100%;
+		li {
+			width: 100%;
+			display: block;
+			padding: 2px;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 14px;
+		}
+	}
+}

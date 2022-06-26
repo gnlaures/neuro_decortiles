@@ -1,0 +1,52 @@
+.c-blogArticle {
+	&__header {
+		@include roundedAll(5px);
+		display: block;
+		border: 1px solid $black;
+		padding-top: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 140px;
+		span.date {
+			display: block;
+			width: 100%;
+			text-align: right;
+			font-size: 14px;
+			color: $black;
+			font-weight: $fwBold;
+			margin-bottom: 20px;
+		}
+		h1 {
+			@include titles($fs: 38px, $fw: $fwBold, $tc: $black);
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+		h2 {
+			@include paragraphs($fs: 23px, $tc: $gray3);
+			font-weight: $fwExtraLight;
+		}
+		h1, h2 {
+			text-align: center;
+			max-width: 380px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	&__content {
+		padding: 0 40px;
+		margin-top: -110px;
+		.c-plainText {
+			@include roundedAll(5px);
+			padding: 10px;
+			background: $white;
+		}
+	}
+}
+@media screen and (max-width: 640px) {
+	.c-blogArticle__content {
+		padding: 0 10px;
+		.c-plainText {
+			padding: 2px;
+		}
+	}
+}

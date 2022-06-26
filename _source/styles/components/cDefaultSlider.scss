@@ -1,0 +1,29 @@
+.c-defaultSlider {
+	display: block;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	&__swiper {
+		display: block;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+		a, img {
+			display: block;
+			width: 100%;
+		}
+	}
+	&__arrows {
+		height: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		margin-top: -15px;
+	}
+}

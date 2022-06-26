@@ -1,0 +1,105 @@
+.s-aboutBlock {
+	display: block;
+	padding: 80px 0;
+	&__header {
+		h1 {
+			@include titlesSerif();
+		}
+	}
+	&__content {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: space-between;
+		padding-top: 80px;
+		p {
+			@include paragraphs($tc: $white, $fs: 24px);
+			line-height: 1.75;
+			text-transform: uppercase;
+			font-weight: $fwExtraLight;
+			margin-bottom: 25px;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&:nth-of-type(even) {
+		.s-aboutBlock__header {
+			h1, h1 span {
+				text-align: right;
+			}
+			h1:before {
+				left: inherit;
+				right: 0;
+			}
+		}
+		.s-aboutBlock__content {
+			p {
+				text-align: right;
+			}
+		}
+		.s-aboutBlock__col {
+			&:last-of-type {
+				padding-left: 80px;
+			}
+		}
+	}
+	&:nth-of-type(odd) {
+		.s-aboutBlock__col {
+			&:first-of-type {
+				order: 2;
+			}
+			&:last-of-type {
+				order: 1;
+				padding-right: 80px;
+			}
+		}
+	}
+
+	&:nth-of-type(1) {
+		p {
+			max-width: 310px;
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.s-aboutBlock__content {
+		align-items: flex-start;
+		p {
+			font-size: 20px;
+			margin-bottom: 20px;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.s-aboutBlock:nth-of-type(odd) .s-aboutBlock__col:last-of-type {
+		padding-right: 40px;
+	}
+	.s-aboutBlock:nth-of-type(even) .s-aboutBlock__col:last-of-type {
+		padding-left: 40px;
+	}
+}
+@media screen and (max-width: 780px) {
+	.s-aboutBlock {
+		.u-container {
+			max-width: 600px;
+		}
+		&__content {
+			flex-wrap: wrap;
+		}
+		&__col {
+			@include flexWidth(100% !important);
+		}
+	}
+	.s-aboutBlock:nth-of-type(odd) .s-aboutBlock__col:last-of-type {
+		padding-right: 0;
+		margin-bottom: 30px;
+	}
+	.s-aboutBlock:nth-of-type(even) .s-aboutBlock__col:last-of-type {
+		padding-left: 0;
+		margin-top: 30px;
+	}
+}

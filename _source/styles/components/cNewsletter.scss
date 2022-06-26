@@ -1,0 +1,53 @@
+.c-newsletter {
+	.c-form {
+		&__field {
+			input {
+				background-color: $black2;
+				height: 60px;
+				line-height: 60px;
+				border-bottom: 0;
+				padding: 0 20px;
+			}
+			&.--check {
+				padding-top: 10px;
+				cursor: pointer;
+				label {
+					@include paragraphs($fs: 16px, $tc: $white);
+					margin-bottom: 0;
+					padding-left: 8px;
+					a {
+						font-size: 16px;
+					}
+				}
+				input {
+					@include flexWidth(20px);
+					height: 20px;
+					line-height: 20px;
+					background-color: $black3;
+					padding: 0;
+				}
+			}
+		}
+	}
+	.c-btn {
+		background: $black3;
+		font-weight: $fwBold;
+		text-transform: uppercase;
+		font-size: 18px;
+		initial-letter: inherit;
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.c-newsletter {
+		.c-form {
+			&__field {
+				@include flexWidth(100%);
+				input {
+					text-align: center;
+				}
+			}
+		}
+	}
+}

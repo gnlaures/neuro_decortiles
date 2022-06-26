@@ -1,0 +1,94 @@
+.s-catalog {
+	padding: 100px 0;
+	&__col {
+		h1 {
+			@include titles($tc: $gray2, $fs: 42px);
+			max-width: 400px;
+		}
+		h2 {
+			@include titles($tc: $gray2, $fs: 30px);
+			max-width: 400px;
+			margin-top: 10px;
+			font-weight: $fwMedium;
+		}
+		p {
+			@include paragraphs($tc: $gray2);
+			max-width: 320px;
+			text-transform: uppercase;
+			margin-top: 40px;
+			strong {
+				font-weight: $fwBold;
+			}
+		}
+	}
+	&__cover {
+		display: block;
+		width: 100%;
+		* {
+			display: block;
+			width: 100%;
+		}
+	}
+	&__ctas {
+		@include calcWidthForPositionNegative(-25px);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		> li {
+			padding: 25px;
+		}
+	}
+
+	&.--black {
+		background: $black;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.s-catalog {
+		.u-container {
+			flex-wrap: wrap;
+			max-width: 620px;
+		}
+		&__col {
+			@include flexWidth(100%);
+			h1 {
+				font-size: 34px;
+			}
+			h2 {
+				font-size: 26px;
+			}
+			p {
+				margin-top: 30px;
+			}
+			&:first-of-type {
+				margin-bottom: 50px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 580px) {
+	.s-catalog {
+		&__ctas {
+			@include calcWidthForPositionNegative(-10px);
+			> li {
+				padding: 10px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 460px) {
+	.s-catalog {
+		&__ctas {
+			flex-wrap: wrap;
+			margin-top: 40px;
+			> li {
+				@include flexWidth(100%);
+				a {
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
